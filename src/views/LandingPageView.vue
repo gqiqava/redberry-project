@@ -1,11 +1,11 @@
 <template>
   <div class="grid grid-cols-1 gap-10 md:grid md:grid-cols-6 md:gap-30">
-    <section class="xl:col-span-4 md:col-span-3">
+    <div class="md:col-span-3 xl:col-span-4">
       <InfoComponent />
-    </section>
-    <section class="xl:col-span-2 md:col-span-3">
+    </div>
+    <div class="order-first md:order-last md:col-span-3 xl:col-span-2">
       <FormComponent />
-    </section>
+    </div>
   </div>
 </template>
     

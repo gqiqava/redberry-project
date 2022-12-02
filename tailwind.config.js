@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         "metal-dark": "#111317",
       },
+      screens: {
+        "3xl": "1800px",
+      },
     },
   },
   plugins: [],

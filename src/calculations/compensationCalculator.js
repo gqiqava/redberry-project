@@ -1,6 +1,6 @@
 export function calculator(income, days) {
-  let monthlyIncome = parseFloat(income);
-  let daysOff = parseFloat(days);
+  let monthlyIncome = parseInt(income);
+  let daysOff = parseInt(days);
 
   let paidByEmployer = 0;
   let paidByInsurance = 0;

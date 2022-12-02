@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-rows-7 gap-4 px-6 py-10 lg:w-4/5 bg-white text-metal-dark">
+  <div class="grid grid-rows-7 gap-4 px-6 py-20 items-center lg:w-4/5 bg-white text-metal-dark cutEdges">
     <section>
-      <h4 class="form-heading text-2xl">
+      <h4 class="text-2xl font-bold tracking-tight">
         Compensation <br> Calculator
       </h4>
     </section>
@@ -26,9 +26,9 @@
     </section>
     <section class="text-center">
       <p text-sm> Compensation total for {{ daysOnLeave }} days (net)</p>
-      <p v-if="compensationObj" class="text-2xl font-bold">{{ (parseFloat(compensationObj?.paidByEmployer) +
-          parseFloat(compensationObj?.paidByInsurance)).toFixed(2)
-      }}€</p>
+      <p v-if="compensationObj" class="text-2xl font-bold">
+        {{ (parseFloat(compensationObj?.paidByEmployer) + parseFloat(compensationObj?.paidByInsurance)).toFixed(2) }}€
+      </p>
       <p v-else class="text-sm">will appear here</p>
     </section>
   </div>
@@ -60,7 +60,7 @@ const maximumDuration = computed(() => {
   return maxDaysOff.value ? 240 : 182
 })
 
-// Days on sick leave input controller -> Days Off field status: dayOffFieldStatus
+// Days on sick leave input controller -> Days on sick-leave field status: dayOffFieldStatus
 
 const daysOnLeave = ref("");
 let daysErrorMessage = ref(null);
@@ -100,11 +100,6 @@ const calculateCompensation = () => {
 </script>
   
 <style scoped>
-.form-heading {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
 .main-button {
   background: linear-gradient(90deg, #911812 0%, #E1261C 100%);
   padding: 20px 40px;
@@ -118,6 +113,18 @@ const calculateCompensation = () => {
 
 .main-button:disabled {
   background: linear-gradient(90deg, #7d6361 0%, #e3a3a3 100%);
+}
+
+.cutEdges {
+  background:
+    linear-gradient(45deg, transparent 15px, white 15px),
+    linear-gradient(135deg, transparent 15px, white 15px),
+    linear-gradient(225deg, transparent 15px, white 15px),
+    linear-gradient(315deg, transparent 15px, white 15px);
+
+  background-position: bottom left, top left, top right, bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
 }
 </style>
   
