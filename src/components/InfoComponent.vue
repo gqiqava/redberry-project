@@ -15,7 +15,7 @@
                 </ul>
             </section>
             <section class="xl:col-span-2 md:col-span-3">
-                <img src="@/assets/images/image.webp" alt="">
+                <img src="@/assets/images/image.webp" style="height: 180px; width: 240px;" alt="">
             </section>
         </section>
     </div>

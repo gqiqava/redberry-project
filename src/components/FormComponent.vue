@@ -12,6 +12,7 @@
     <section>
       <InputComponent v-model="daysOnLeave" label="Days on sick-leave" mesUnit="days" :errMessage="daysErrorMessage"
         maxLength="3" :placeHolder="`At most ${maximumDuration} days`" />
+      <small class="text-red-500" v-if="!limitStatus"> At most {{ maximumDuration }} days</small>
     </section>
     <section>
       <input v-model="maxDaysOff" type="checkbox"> <span class="text-sm ml-2">I have
@@ -60,16 +61,17 @@ const maximumDuration = computed(() => {
   return maxDaysOff.value ? 240 : 182
 })
 
-// Days on sick leave input controller -> Days on sick-leave field status: dayOffFieldStatus
+// Days on leave input controller -> Days on sick-leave field status: dayOffFieldStatus
 
 const daysOnLeave = ref("");
+let limitStatus = ref(182);
 let daysErrorMessage = ref(null);
 
 watch([daysOnLeave, maximumDuration], () => {
   let temp = useInputValidator(daysOnLeave.value);
   daysErrorMessage = temp.message.value;
   let integerStatus = temp.fieldStatus.value;
-  let limitStatus = false;
+  // limitStatus = false;
 
   parseInt(daysOnLeave.value) <= maximumDuration.value ? limitStatus = true : limitStatus = false;
 
