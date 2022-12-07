@@ -22,7 +22,7 @@
       <button :disabled="!ButtonStatus" @click="calculateCompensation"
         class="main-button text-white font-bold">Calculate</button>
     </section>
-    <section class=" flex justify-between text-center border-t-2 border-b-2 py-6">
+    <section class="flex justify-between text-center border-t-2 border-b-2 py-6">
       <DisplayBeforeCalc :key="componentKey" :info="compensationObj" />
     </section>
     <section class="text-center">
