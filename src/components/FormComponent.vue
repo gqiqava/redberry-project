@@ -71,7 +71,6 @@ watch([daysOnLeave, maximumDuration], () => {
   let temp = useInputValidator(daysOnLeave.value);
   daysErrorMessage = temp.message.value;
   let integerStatus = temp.fieldStatus.value;
-  // limitStatus = false;
 
   parseInt(daysOnLeave.value) <= maximumDuration.value ? limitStatus = true : limitStatus = false;
 
